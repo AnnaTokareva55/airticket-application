@@ -1,0 +1,187 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Header*/
+
+.header-nav {
+  height: 100%;
+  line-height: 0;
+  background-color: rgb(116, 32, 84);
+}
+
+.header-nav .brand-logo {
+  position: static;
+}
+
+.header-nav .select-wrapper input.select-dropdown {
+  width: 130px;
+  border-bottom: none;
+  margin-bottom: 0;
+  color: beige;
+}
+
+.header-nav .select-wrapper input.select-dropdown:focus {
+  border-bottom: none;
+}
+
+.header-nav .select-wrapper .caret {
+  fill: beige;
+}
+
+.header-nav .dropdown-content li > span {
+  color: rgb(116, 32, 84);
+}
+
+.basket {
+  padding: 0 0 0 80px;
+}
+
+/*Form*/
+
+.input-field input[type="text"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid rgb(116, 32, 84);
+  box-shadow: 0 1px 0 0 rgb(116, 32, 84);
+}
+
+.datepicker-container .datepicker-date-display {
+  background-color: rgb(116, 32, 84);
+}
+
+.datepicker-table-wrapper .datepicker-table td.is-selected {
+  background-color: rgb(116, 32, 84);
+}
+
+.datepicker-table-wrapper .datepicker-table td.is-today {
+  color: rgb(116, 32, 84);
+}
+
+.confirmation-btns .datepicker-cancel,
+.confirmation-btns .datepicker-done {
+  color: rgb(116, 32, 84);
+}
+
+/*Tickets*/
+
+.not-tickets-block {
+  width: 100%;
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logo-airlines {
+  width: 25%;
+  margin: 0 10px 0 0;
+}
+
+.card-content-destination {
+  padding: 10px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.card-content-info {
+  padding: 10px 0;
+}
+
+.card-price {
+  padding: 5px;
+  color: beige;
+  font-size: 16px;
+}
+
+.card-content-btn {
+  width: fit-content;
+}
+
+/*Basket*/
+
+.basket .basket-content {
+  min-width: fit-content;
+  min-height: fit-content;
+}
+
+.dropdown-content li {
+  min-width: 100%;
+  min-height: 100%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.empty-basket-block {
+  padding: 10px;
+}
+
+.basket-ticket-logo-airlines {
+  max-width: 50px;
+  margin-right: 15px;
+}
+
+.basket-ticket-destination {
+  font-weight: bold;
+  border-bottom: 1px solid lightgray;
+}
+
+.basket-ticket-add-info {
+  padding: 3px 0;
+}
+
+.basket-ticket-time-flight {
+  padding: 0 10px 0 0;
+}
+
+.basket-ticket-time-departure {
+  font-weight: bold;
+}
+
+.basket-ticket-price {
+  padding: 3px;
+  color: beige;
+}
+
+.basket-remove .basket-remove-btn {
+  margin: 3px 0;
+}
