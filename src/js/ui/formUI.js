@@ -16,26 +16,50 @@ class FormUI {
     this.returnDateInstance = datePickerInstance(this.returnDate);
   }
 
+  /**
+   * Получение html-элемента формы из DOM.
+   * @returns {object}
+   */
   getForm() {
     return this.form;
   }
 
+  /**
+   * Получение города вылета.
+   * @returns {string} - название города, выбранного пользователем.
+   */
   get originValue() {
     return this.origin.value;
   }
 
+  /**
+   * Получение города прибытия.
+   * @returns {string} - название города, выбранного пользователем.
+   */
   get destinationValue() {
     return this.destination.value;
   }
 
+  /**
+   * Получение даты вылета.
+   * @returns {string} - дата, введенная пользователем.
+   */
   get departDateValue() {
     return this.departDate.value;
   }
 
+  /**
+   * Получение даты возврата.
+   * @returns {string} - дата, введенная пользователем.
+   */
   get returnDateValue() {
     return this.returnDate.value;
   }
 
+  /**
+   * Установка данных для полей с автокомплитом.
+   * @param {object} data - объект с содержимым для автозаполнения (город + страна).
+   */
   setAutocompleteData(data) {
     this.originInstance.updateData(data);
     this.destinationInstance.updateData(data);

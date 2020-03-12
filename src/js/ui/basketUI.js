@@ -3,10 +3,19 @@ class BasketUI {
     this.container = document.getElementById("dropdown1");
   }
 
+  /**
+   * Получение разметки пустой корзины.
+   * @returns {string} - шаблон разметки.
+   */
   static emptyBasketTemplate() {
     return `<li><div class="empty-basket-block">В корзине нет билетов.</div></li>`;
   }
 
+  /**
+   * Получение html-разметки одного элемента списка авиабилетов в корзине.
+   * @param {object} ticket - объект авиабилета.
+   * @returns {string} - разметка элемента списка.
+   */
   static basketTicketTemplate(ticket) {
     return `<li>
     <div class="basket-ticket d-flex flex-direction-column">
@@ -48,15 +57,25 @@ class BasketUI {
   </li>`;
   }
 
+  /**
+   * Очистка контейнера.
+   */
   clearContainer() {
     this.container.innerHTML = "";
   }
 
+  /**
+   * Добавление разметки пустой карзины в DOM.
+   */
   showEmptyBasket() {
     const template = BasketUI.emptyBasketTemplate();
     this.container.insertAdjacentHTML("afterbegin", template);
   }
 
+  /**
+   * Рендеринг контента для контейнера корзины.
+   * @param {object} tickets - объект объектов авиабилетов.
+   */
   renderBasket(tickets) {
     this.clearContainer();
     const ticketsArr = Object.values(tickets);
@@ -72,11 +91,17 @@ class BasketUI {
     this.container.insertAdjacentHTML("afterbegin", fragment);
   }
 
+  /**
+   * Вывод оповещения о добавлении билета в корзину.
+   */
   showAddMsg() {
     const msg = "Билет добавлен в корзину.";
     M.toast({ html: msg, classes: "#43a047 green darken-1" });
   }
 
+  /**
+   * Вывод оповещения об удалении билета из корзины.
+   */
   showRemoveMsg() {
     const msg = "Билет удален из корзины.";
     M.toast({ html: msg, classes: "#ff1744 red accent-2" });

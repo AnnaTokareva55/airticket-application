@@ -16,12 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
     onFormSubmit();
   });
 
+  /**
+   * Инициация приложения (state, полей с автозаполнением в форме и корзины).
+   */
   async function initApp() {
     await state.init();
     formUI.setAutocompleteData(state.shortCitiesList);
     basketInit();
   }
 
+  /**
+   * Инициация корзины (загрузка содержимого корзины и рендеринг контейнера для нее).
+   */
   function basketInit() {
     basketUI.renderBasket(stateBasket.tickets);
     const removeBasketButtons = document.querySelectorAll(".basket-remove-btn");
@@ -33,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
+  /**
+   * Обработчик события клика по кнопке добавления билета в корзину.
+   * @param {object} event - объект события.
+   */
   function addToBasket(event) {
     const {
       airline_logo,
@@ -63,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
     basketUI.showAddMsg();
   }
 
+  /**
+   * Обработчик события клика по кнопке удаления билета из корзины.
+   * @param {object} event - объект события.
+   */
   function removeTicketFromBasket(event) {
     const { id_ticket } = event.target.dataset;
     stateBasket.removeTicketFromBasket(id_ticket);
@@ -70,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
     basketUI.showRemoveMsg();
   }
 
+  /**
+   * Обработчик события отправки формы для поиска билетов.
+   */
   async function onFormSubmit() {
     const origin = state.getCityCodeByKey(formUI.originValue);
     const destination = state.getCityCodeByKey(formUI.destinationValue);

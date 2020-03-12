@@ -6,10 +6,18 @@ class TicketsUI {
     this.currencyLogo = currency.getCurrencyLogo.bind(currency);
   }
 
+  /**
+   * Получение разметки пустого контейнера авиабилетов.
+   * @returns {string} - html-разметка.
+   */
   static emptyMsgTemplate() {
     return `<div class="not-tickets-block">По вашему запросу билетов не найдено.</div>`;
   }
 
+  /**
+   * Получение разметки карточки авиабилета.
+   * @returns {string} - html-разметка.
+   */
   static ticketTemplate(ticket, currency) {
     return `<div class="col s12 m6 mx-auto">
     <div class="card">
@@ -57,15 +65,25 @@ class TicketsUI {
   </div>`;
   }
 
+  /**
+   * Очистка контейнера авиабилетов.
+   */
   clearContainer() {
     this.container.innerHTML = "";
   }
 
+  /**
+   * Вставка разметки пустого контейнера авиабилетов в DOM.
+   */
   showEmptyMsg() {
     const template = TicketsUI.emptyMsgTemplate();
     this.container.insertAdjacentHTML("afterbegin", template);
   }
 
+  /**
+   * Рендеринг контента контейнера авиабилетов.
+   * @param {array} tickets - массив объектов авиабилетов.
+   */
   renderTickets(tickets) {
     this.clearContainer();
     if (!tickets.length) {

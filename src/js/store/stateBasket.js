@@ -1,5 +1,6 @@
 class StateBasket {
   constructor() {
+    // Заглушка. Список билетов в корзине также должен запрашиваться с сервера.
     this.tickets = {
       0: {
         id: 0,
@@ -30,6 +31,10 @@ class StateBasket {
     };
   }
 
+  /**
+   * Добавление билета в корзину.
+   * @param {object} ticket - объект авиабилета.
+   */
   addTicketToBasket(ticket) {
     const idTicket = Math.random();
     this.tickets = {
@@ -38,6 +43,10 @@ class StateBasket {
     };
   }
 
+  /**
+   * Удаление билета из корзины.
+   * @param {string} idTicket - id авиабилета в объекте корзины.
+   */
   removeTicketFromBasket(idTicket) {
     delete this.tickets[idTicket];
   }
